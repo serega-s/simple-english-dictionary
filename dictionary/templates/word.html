@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<div class="search">
+  <form action="word">
+    <input
+      type="text"
+      name="search"
+      class="searchTerm"
+      placeholder="Input Your Word Here"
+    />
+    <button type="submit" class="searchButton">
+      <i class="fa fa-search"></i>
+    </button>
+  </form>
+</div>
+<br />
+<div class="content">
+  <h3>Meaning: {{meaning}}</h3>
+  <br />
+  <h3>Synonyms: {% for synonym in synonyms %} {{synonym}}, {% endfor %}</h3>
+  <br />
+  <h3>Antonyms: {% for antonym in antonyms %} {{antonym}}, {% endfor %}</h3>
+</div>
+
+{% endblock %}
